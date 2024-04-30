@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css" />
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+    <script src="https://colorjs.io/dist/color.global.js"></script>
+</head>
+
+<body class="bg-light">
+    <main id="main">
+        <div class="shadow p-4 mx-4 my-2 bg-white border-bottom border-2 border-dark rounded">
+            <h2 class="fw-bold m-3">Input</h2>
+            <div class="shadow p-4 m-2 bg-white border-bottom border-2 border-dark rounded">
+                <h4>Colors</h4>
+                <br>
+                <div class="d-flex justify-content-start ">
+                    <div>
+                        <label for="col1" class="form-label">Gradient Start</label><br>
+                        <input type="text" id="col1" class="coloris">
+                    </div>
+                    <div class="mx-2">&nbsp;</div>
+                    <div>
+                        <label for="col2" class="form-label">Gradient Stop</label><br>
+                        <input type="text" id="col2" class="coloris">
+                    </div>
+                    <div class="mx-2">&nbsp;</div>
+                    <div>
+                        <label for="textcol1" class="form-label">Text 1</label><br>
+                        <input type="text" id="textcol1" class="coloris">
+                    </div>
+                    <div class="mx-2">&nbsp;</div>
+                    <div>
+                        <label for="textcol2" class="form-label">Text 2</label><br>
+                        <input type="text" id="textcol2" class="coloris">
+                    </div>
+                </div>
+            </div>
+            <div class="shadow p-4 m-2 bg-white border-bottom border-2 border-dark rounded">
+                <h4>Contrast Calculation:</h4>
+                <br>
+                <div class="d-flex justify-content-start">
+                    <div>
+                        <label for="contrastType" class="form-label">Contrast Calculation</label>
+                        <select id="contrastType" class="form-select" aria-label="Contrast Selection">
+                            <option value="WCAG21" selected>WCAG 2.1 (Web Accessibility)</option>
+                            <option value="Weber">Weber (Luminance Contrast)</option>
+                            <option value="Michelson">Michelson (Modulation Contrast or Peak-to-Peak Constrast)</option>
+                            <option value="APCA">APCA (Accessible Perceptual Contrast Algorithm)</option>
+                            <option value="Lstar">Lightness Difference (Google Material Calculation)</option>
+                            <option value="DeltaPhi">Delta Phi Star (Simplified Perceptual Contrast)</option>
+                            <option value="OKLAB">OKLAB Percieved Lightness</option>
+                        </select>
+                    </div>
+                    <div class="mx-2">&nbsp;</div>
+                    <div>
+                        <label for="oklabPercent" class="form-label">OKLAB Switch %</label>
+                        <select id="oklabPercent" class="form-select" aria-label="OKLAB Contrast Percentage" disabled>
+                            <option value="0.5">Switch at 50%</option>
+                            <option value="0.55">Switch at 55%</option>
+                            <option value="0.6">Switch at 60%</option>
+                            <option value="0.65">Switch at 65%</option>
+                            <option value="0.7">Switch at 70%</option>
+                            <option value="0.75">Switch at 75%</option>
+                            <option value="0.8">Switch at 80%</option>
+                            <option value="0.85">Switch at 85%</option>
+                            <option value="0.9">Switch at 90%</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="shadow p-4 mx-4 my-2 bg-white border-bottom border-2 border-dark rounded">
+            <h2 class="fw-bold m-3">Output</h2><br>
+            <div class="shadow p-4 m-2 bg-white border-bottom border-2 border-dark rounded">
+                <h4><span class="badge bg-danger">Avoid</span> sRGB</h4>
+                <br>
+                Gradient:
+                <div class="d-flex">
+                    <div class="color-box-max gradient-srgb"></div>
+                </div>
+            </div>
+            <div class="shadow p-4 m-2 bg-white border-bottom border-2 border-dark rounded">
+                <h4><span class="badge bg-success">Prefer</span> OKLAB</h4>
+                <br>
+                Gradient:
+                <div class="d-flex">
+                    <div class="color-box-max gradient-oklab"></div>
+                </div>
+                <br>
+                Boxes:
+                <div class="d-flex">
+                    <div class="position-absolute top-50 start-50 translate-middle"></div>
+                    <div class="color-box c000 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c010 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c020 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c030 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c040 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c050 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c060 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c070 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c080 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c090 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                    <div class="color-box c100 position-relative pointer"><span class="position-absolute top-50 start-50 translate-middle">#000000</span></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <script src="script.js"></script>
+    </footer>
+</body>
+
+</html>

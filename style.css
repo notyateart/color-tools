@@ -1,0 +1,74 @@
+:root{
+    --col1: #0000ff;
+    --col2: #ffffff;
+    --textcol1: #000000;
+    --textcol2: #ffffff;
+}
+
+.pointer {cursor: pointer;}
+
+.color-container{
+    display: flex;
+}
+
+.color-box{
+    flex: 10%;
+    height: 5vh;
+}
+
+.color-box-max{
+    flex: 100%;
+    height: 5vh;
+}
+
+.gradient-srgb {
+    background-image: linear-gradient(in srgb to right, var(--col1), var(--col2));
+}
+
+.gradient-oklab {
+    background-image: linear-gradient(in oklab to right, var(--col1), var(--col2));
+}
+
+.c000 {
+    background-color: color-mix(in oklab, var(--col1) 100%, var(--col2) 0%);
+}
+
+.c010 {
+    background-color: color-mix(in oklab, var(--col1) 90%, var(--col2) 10%);
+}
+
+.c020 {
+    background-color: color-mix(in oklab, var(--col1) 80%, var(--col2) 20%);
+}
+
+.c030 {
+    background-color: color-mix(in oklab, var(--col1) 70%, var(--col2) 30%);
+}
+
+.c040 {
+    background-color: color-mix(in oklab, var(--col1) 60%, var(--col2) 40%);
+}
+
+.c050 {
+    background-color: color-mix(in oklab, var(--col1) 50%, var(--col2) 50%);
+}
+
+.c060 {
+    background-color: color-mix(in oklab, var(--col1) 40%, var(--col2) 60%);
+}
+
+.c070 {
+    background-color: color-mix(in oklab, var(--col1) 30%, var(--col2) 70%);
+}
+
+.c080 {
+    background-color: color-mix(in oklab, var(--col1) 20%, var(--col2) 80%);
+}
+
+.c090 {
+    background-color: color-mix(in oklab, var(--col1) 10%, var(--col2) 90%);
+}
+
+.c100 {
+    background-color: color-mix(in oklab, var(--col1) 0%, var(--col2) 100%);
+}
