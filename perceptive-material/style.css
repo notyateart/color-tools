@@ -1,0 +1,24 @@
+.colorbox {
+    aspect-ratio: 1/1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.o-red{background-color: oklch(64.27% 0.215 28.81);}
+.o-pink{background-color: oklch(60.62% 0.23 9.63);}
+.o-purple{background-color: oklch(51.68% 0.215 321.24);}
+.o-deep-purple{background-color: oklch(47.42% 0.186 294.78);}
+.o-indigo{background-color: oklch(47.82% 0.159 271.4);}
+.o-blue{background-color: oklch(65.82% 0.169 248.81);}
+.o-light-blue{background-color: oklch(69.91% 0.157 238.99);}
+.o-cyan{background-color: oklch(72.91% 0.126 210.82);}
+.o-teal{background-color: oklch(60.45% 0.107 183.38);}
+.o-green{background-color: oklch(67.31% 0.162 144.21);}
+.o-light-green{background-color: oklch(75.36% 0.163 130.5);}
+.o-lime{background-color: oklch(85.55% 0.177 114.85);}
+.o-yellow{background-color: oklch(92.85% 0.18 102.5);}
+.o-amber{background-color: oklch(84.42% 0.172 84.93);}
+.o-orange{background-color: oklch(77.03% 0.174 64.05);}
+.o-deep-orange{background-color: oklch(67.92% 0.21276331003446491 36.53236106456168);}
+.o-brown{background-color: oklch(48.45% 0.053 40.69);}
+.o-gray{background-color: oklch(69.93% 0 0);}
+.o-blue-gray{background-color: oklch(57.24% 0.04 229.02);}
