@@ -1,6 +1,3 @@
-// import Color from "https://colorjs.io/dist/color.js";
-// import ColorSquare from "dist/colorbox.js";
-
 var chromas = [0.21, 0.18, 0.15, 0.12, 0.09, 0.06, 0.03];
 var hues = [30, 10, 320, 300, 270, 250, 235, 210, 180, 145, 130, 115, 100, 85, 65, 40];
 var container = document.querySelector("#perceptive");
