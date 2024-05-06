@@ -10,17 +10,13 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://colorjs.io/dist/color.global.js"></script>
 </head>
 
 <body>
     <div class="container-fluid p-4">
         <h1>Original Colors</h1>
         <div class="d-flex">
-            <div class="">
-                <div class="d-flex" style="height: 100%;">
-                    <div class="align-self-center text-center lead" style="width: 100%;">V: 500</div>
-                </div>
-            </div>
             <div class="colorbox m-2 flex-fill o-red"></div>
             <div class="colorbox m-2 flex-fill o-pink"></div>
             <div class="colorbox m-2 flex-fill o-purple"></div>
@@ -37,20 +33,18 @@
             <div class="colorbox m-2 flex-fill o-amber"></div>
             <div class="colorbox m-2 flex-fill o-orange"></div>
             <div class="colorbox m-2 flex-fill o-deep-orange"></div>
-            <div class="colorbox m-2 flex-fill o-gray"></div>
-            <div class="colorbox m-2 flex-fill"></div>
-            <div class="colorbox m-2 flex-fill o-brown"></div>
-            <div class="colorbox m-2 flex-fill o-blue-gray"></div>
         </div>
         <br><br>
         <h1>Perceptive Colors</h1>
-        <label for="colorSlider" class="form-label lead">Lightness: </label> <span id="sliderValue" class="lead">70%</span><br>
-        <input type="range" min="0" max="3" value="2" id="colorSlider" class="form-range" style="width: 25vw">
+        <label for="colorSlider" class="form-label lead">Lightness: </label> <span id="sliderValue" class="lead">90%</span><br>
+        <input type="range" min="0" max="8" value="8" id="colorSlider" class="form-range" style="width: 25vw">
         <br><br>
         <div id="perceptive"></div>
     </div>
     <footer>
-        <script src="script.js" type="module"></script>
+        <!-- <script src="script.js" type="module"></script> -->
+        <script src="dist/colorbox.js"></script>
+        <script src="script.js"></script>
     </footer>
 </body>
 
