@@ -93,8 +93,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             let textB = new Color("#000000");
             let textW = new Color("#ffffff");
-            let contrastB = c.contrast(textB, "DeltaPhi");
-            let contrastW = c.contrast(textW, "DeltaPhi");
+            let contrastB = c.contrast(textB, "APCA");
+            let contrastW = c.contrast(textW, "APCA");
             if (Math.abs(contrastB) > Math.abs(contrastW)) {
                 div.style.color = "#000000";
             } else {
