@@ -2,8 +2,10 @@
 
 Hi!
 
-This repository is a combination of multiple color tools. These are not connected yet so use the back button in your browser to get back to this link.
+This a private repository with multiple color tools. These are not connected yet so use the back button in your browser to get back to this link.
 
-[OKLAB Color Tool](https://notyateart.github.io/color-tools/oklab-gradient.html)
+[OKLAB Color Gradient & Contrast Tool](https://notyateart.github.io/color-tools/oklab-gradient.html)
 
 [Perceptive Material Design](https://notyateart.github.io/color-tools/perceptive-material/index.html)
+
+[Hex to OKLCH](https://notyateart.github.io/color-tools/hex2oklch/app.py)
