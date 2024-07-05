@@ -20,6 +20,17 @@ function updateColorBoxes(){
                     element.firstChild.style.color = darkerText.toString({format: "hex"});
                 }
                 break;
+            case "APCA":
+                let apcacontrast1 = c.contrast(textcol1, "APCA");
+                let apcacontrast2 = c.contrast(textcol2, "APCA");
+                if (Math.abs(apcacontrast1) > Math.abs(apcacontrast2)){
+                    element.firstChild.style.color = textcol1.toString({format: "hex"});
+                } else {
+                    element.firstChild.style.color = textcol2.toString({format: "hex"});
+                }
+                console.log(apcacontrast1);
+                console.log(apcacontrast2);
+                break;
             default:
                 document.querySelector("#oklabPercent").disabled = true;
                 let contrastcol1 = c.contrast(textcol1, contrastType);
