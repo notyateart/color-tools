@@ -1,9 +1,11 @@
-from flask import Flask, render_template, request, jsonify, send_file
+from flask import Flask, render_template, request, jsonify, send_file, url_for
 import csv
 import os
 import json
+from flask_frozen import Freezer
 
 app = Flask(__name__)
+freezer = Freezer(app)
 
 @app.route('/')
 def index():
@@ -18,7 +20,12 @@ def download_csv():
         writer.writerow(['Hex Code', 'L', 'C', 'H', 'CSS OKLCH Code'])
         for row in data['data']:
             writer.writerow(row)
-    return jsonify({'file_path': file_path})
+    return jsonify({'file_path': url_for('static', filename='colors.csv')})
+
+# # Example route to demonstrate static generation
+# @app.route('/some_page')
+# def some_page():
+#     return render_template('some_page.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

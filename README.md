@@ -8,4 +8,4 @@ This a private repository with multiple color tools. These are not connected yet
 
 [Perceptive Material Design](https://notyateart.github.io/color-tools/perceptive-material/index.html)
 
-[Hex to OKLCH](https://notyateart.github.io/color-tools/hex2oklch/app.py)
+[Hex to OKLCH (Flask-Freezer)](https://notyateart.github.io/color-tools/hex2oklch/build/index.html)
