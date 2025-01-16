@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     slider.addEventListener("input", function() {
-        lightness = 50 + (slider.value * 5);
+        lightness = 0 + (slider.value * 5);
         sliderV.textContent = lightness + "%";
 
         let lightnessTexts = document.querySelectorAll(".select-l");
