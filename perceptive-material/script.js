@@ -38,6 +38,39 @@ function getHex(c) {
     }
 }
 
+function rgbToHex(rgb) {
+    const match = rgb.match(/\d+/g);
+    if (!match) return "#000000"; // Fallback to black
+    return `#${match.slice(0, 3).map(x => parseInt(x).toString(16).padStart(2, '0')).join('')}`;
+}
+
+function showToast(bgC, tC, message) {
+    const toastTemplate = `
+        <div class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true" style="background-color: ${bgC}; color: ${tC}">
+            <div class="d-flex">
+                <div class="toast-body">
+                    ${message}
+                </div>
+                <button type="button" class="btn me-2 m-auto" data-bs-dismiss="toast" aria-label="Close" style="color: ${tC}">
+                    <i class="bi-x-lg"></i>
+                </button>
+            </div>
+        </div>
+    `;
+
+    // Append the toast to the container
+    const toastContainer = document.querySelector('.toast-container');
+    toastContainer.insertAdjacentHTML('beforeend', toastTemplate);
+
+    const toastElement = toastContainer.lastElementChild;
+    const toast = new bootstrap.Toast(toastElement);
+    toast.show();
+
+    toastElement.addEventListener('hidden.bs.toast', () => {
+        toastElement.remove();
+    });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     chromas.forEach(function(chroma){
         let containerdiv = document.createElement("div");
@@ -70,8 +103,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
+    let colorDivs = document.querySelectorAll(".editable");
+    colorDivs.forEach(item => {
+        item.addEventListener('click', event => {
+            const bgColor = window.getComputedStyle(item).backgroundColor;
+            const tColor = window.getComputedStyle(item).color;
+            const bgColorHex = rgbToHex(bgColor);
+            const tColorHex = rgbToHex(tColor);
+            navigator.clipboard.writeText(bgColorHex).then(() => {
+                showToast(bgColorHex, tColorHex, `Color ${bgColorHex} copied to clipboard!`);
+            }).catch(err => {
+                console.error("Failed to copy background color: ", err);
+            });
+        });
+    });
+
     slider.addEventListener("input", function() {
-        lightness = 0 + (slider.value * 5);
+        lightness = 10 + (slider.value * 5);
         sliderV.textContent = lightness + "%";
 
         let lightnessTexts = document.querySelectorAll(".select-l");
@@ -79,7 +127,6 @@ document.addEventListener("DOMContentLoaded", function() {
             lt.innerHTML = "L " + lightness + "%";
         });
 
-        let colorDivs = document.querySelectorAll(".editable");
         colorDivs.forEach(function(div) {
             let c = OKLCH(div.getAttribute("ok-l"), div.getAttribute("ok-c"), div.getAttribute("ok-h"));
             c.oklch.l = lightness/100;
